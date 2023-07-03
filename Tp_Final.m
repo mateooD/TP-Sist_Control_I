@@ -41,3 +41,11 @@ step(FTLC)
 title('Respuesta al escalon de nuestro sistema')
 
 %Error estado estable
+disp('Calculo error estado estable');
+Kp=evalfr(FTLA,0)
+ess_e=1/(1+Kp)
+step(feedback(FTLA,1));
+
+%Lugar de raices
+rlocus(FTLA);
+
